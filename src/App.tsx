@@ -17,6 +17,9 @@ function App() {
           <li>
             <a href={`/about`}>About</a>
           </li>
+          <li>
+            <a href={`/admin`}>Admin panel</a>
+          </li>
         </ul>
       </nav>
       <Outlet />
