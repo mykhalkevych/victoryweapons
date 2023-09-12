@@ -1,27 +1,24 @@
-import { Outlet } from 'react-router-dom';
-import CssBaseline from '@mui/material/CssBaseline'; //like normalize.css
-import Button from '@mui/material/Button';
-import './App.css';
+import { Outlet } from "react-router-dom";
+import { ThemeProvider, createTheme } from "@mui/material/styles";
+import CssBaseline from "@mui/material/CssBaseline"; //like normalize.css
+import "./App.css";
+import HeaderComponent from "./components/header/HeaderComponent";
+
+const darkTheme = createTheme({
+  palette: {
+    mode: "dark",
+  },
+});
 
 function App() {
   return (
-    <div className='App'>
-      <meta name='viewport' content='initial-scale=1, width=device-width' />
-      <CssBaseline />
-      <Button variant='contained'>Привіт світ</Button>
-      <nav>
-        <ul>
-          <li>
-            <a href={`/`}>Home</a>
-          </li>
-          <li>
-            <a href={`/about`}>About</a>
-          </li>
-          <li>
-            <a href={`/admin`}>Admin panel</a>
-          </li>
-        </ul>
-      </nav>
+    <div className="App">
+      <meta name="viewport" content="initial-scale=1, width=device-width" />
+      <ThemeProvider theme={darkTheme}>
+        <CssBaseline />
+        <HeaderComponent />
+      </ThemeProvider>
+
       <Outlet />
     </div>
   );
