@@ -25,11 +25,10 @@ function App() {
         <Container style={{ flexGrow: 1 }}>
           {/* Your main application content here */}
           {/* This Container will grow to fill available space */}
+          <Outlet />
         </Container>
         <FooterComponent />
       </ThemeProvider>
-
-      <Outlet />
     </div>
   );
 }
